@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "phantasmal-forests",
+	"version": "${version}",
+	"name": "Phantasmal Forests",
+	"description": "This mod adds new fantasy-themed forests to the game along with new items and blocks.",
+	"authors": [
+		"Hothlica"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT-License",
+	"icon": "assets/phantasmal-forests/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.hothlica.phantasmal_forests.PhantasmalForests"
+		],
+		"client": [
+			"net.hothlica.phantasmal_forests.client.PhantasmalForestsClient"
+		],
+		"fabric-datagen": [
+			"net.hothlica.phantasmal_forests.client.PhantasmalForestsDataGenerator"
+		]
+	},
+	"mixins": [
+		"phantasmal-forests.mixins.json",
+		{
+			"config": "phantasmal-forests.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
