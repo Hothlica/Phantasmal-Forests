@@ -22,7 +22,7 @@
 			"net.hothlica.phantasmal_forests.client.PhantasmalForestsClient"
 		],
 		"fabric-datagen": [
-			"net.hothlica.phantasmal_forests.client.PhantasmalForestsDataGenerator"
+			"net.hothlica.phantasmal_forests.data.PhantasmalForestsDataGenerator"
 		]
 	},
 	"mixins": [
