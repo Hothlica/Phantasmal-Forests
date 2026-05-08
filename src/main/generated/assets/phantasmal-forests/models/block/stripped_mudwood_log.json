@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "phantasmal-forests:block/stripped_mudwood_log_top",
+    "side": "phantasmal-forests:block/stripped_mudwood_log"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "phantasmal-forests:block/stripped_mudwood_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "phantasmal-forests:block/stripped_mudwood_wood"
+    },
+    "axis=z": {
+      "model": "phantasmal-forests:block/stripped_mudwood_wood",
+      "x": 90
+    }
+  }
+}
