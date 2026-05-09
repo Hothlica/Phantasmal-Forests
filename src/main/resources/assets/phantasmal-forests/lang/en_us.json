@@ -6,5 +6,18 @@
   "block.phantasmal-forests.mudwood_log": "Mudwood Log",
   "block.phantasmal-forests.mudwood_wood": "Mudwood Wood",
   "block.phantasmal-forests.stripped_mudwood_log": "Stripped Mudwood Log",
-  "block.phantasmal-forests.stripped_mudwood_wood": "Stripped Mudwood Wood"
+  "block.phantasmal-forests.stripped_mudwood_wood": "Stripped Mudwood Wood",
+  "block.phantasmal-forests.mudwood_planks":"Mudwood Planks",
+  "block.phantasmal-forests.mudwood_slab":"Mudwood Slab",
+  "block.phantasmal-forests.mudwood_stairs":"Mudwood Stairs",
+  "block.phantasmal-forests.mudwood_fence":"Mudwood Fence",
+  "block.phantasmal-forests.mudwood_fence_gate":"Mudwood Fence Gate",
+  "block.phantasmal-forests.mudwood_trapdoor":"Mudwood Trapdoor",
+  "block.phantasmal-forests.mudwood_door":"Mudwood Door",
+  "block.phantasmal-forests.mudwood_button":"Mudwood Button",
+  "block.phantasmal-forests.mudwood_pressure_plate":"Mudwood Pressure Plate",
+  "block.phantasmal-forests.mudwood_sign":"Mudwood Sign",
+  "block.phantasmal-forests.mudwood_hanging_sign":"Mudwood Hanging Sign",
+  "block.phantasmal-forests.mudwood_shelf":"Mudwood Shelf",
+  "block.phantasmal-forests.mudwood_leaves":"Mudwood Leaves"
 }

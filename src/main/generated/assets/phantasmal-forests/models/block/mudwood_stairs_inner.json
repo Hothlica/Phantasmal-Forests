@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "phantasmal-forests:block/mudwood_planks",
+    "side": "phantasmal-forests:block/mudwood_planks",
+    "top": "phantasmal-forests:block/mudwood_planks"
+  }
+}

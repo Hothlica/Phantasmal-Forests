@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "phantasmal-forests:block/mudwood_slab"
+    },
+    "type=double": {
+      "model": "phantasmal-forests:block/mudwood_planks"
+    },
+    "type=top": {
+      "model": "phantasmal-forests:block/mudwood_slab_top"
+    }
+  }
+}

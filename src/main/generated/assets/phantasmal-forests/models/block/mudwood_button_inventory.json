@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "phantasmal-forests:block/mudwood_planks"
+  }
+}

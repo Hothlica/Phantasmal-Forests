@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "phantasmal-forests:block/mudwood_door_bottom",
+    "top": "phantasmal-forests:block/mudwood_door_top"
+  }
+}
