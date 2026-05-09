@@ -8,9 +8,11 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class ModBlocks {
@@ -32,9 +34,9 @@ public class ModBlocks {
     public static final Block MUDWOOD_BUTTON = register("mudwood_button", MudwoodHelper.button());
     public static final Block MUDWOOD_PRESSURE_PLATE = register("mudwood_pressure_plate", MudwoodHelper.pressurePlate());
     public static final Block MUDWOOD_SIGN = register("mudwood_sign", MudwoodHelper.sign());
-    public static final Block MUDWOOD_WALL_SIGN = register("mudwood_wall_sign", MudwoodHelper.wallSign());
+    public static final Block MUDWOOD_WALL_SIGN = registerWithoutItem("mudwood_wall_sign", MudwoodHelper.wallSign());
     public static final Block MUDWOOD_HANGING_SIGN = register("mudwood_hanging_sign", MudwoodHelper.hangingSign());
-    public static final Block MUDWOOD_WALL_HANGING_SIGN = register("mudwood_wall_hanging_sign", MudwoodHelper.wallHangingSign());
+    public static final Block MUDWOOD_WALL_HANGING_SIGN = registerWithoutItem("mudwood_wall_hanging_sign", MudwoodHelper.wallHangingSign());
     public static final Block MUDWOOD_SHELF = register("mudwood_shelf", MudwoodHelper.shelf());
 
     public static final Block MUDWOOD_LEAVES = register("mudwood_leaves", MudwoodHelper.leaves(0x4A461E));
@@ -47,14 +49,15 @@ public class ModBlocks {
     public static void init() {}
 
     public static Block register(String id, BlockPropertyBuilder properties) {
-        Block block = registerWithoutItem(id, properties.getBlockType(), properties.getProperties());
+        Block block = registerWithoutItem(id, properties);
         ModItems.registerBlockItem(block);
         return block;
     }
 
-    public static <B extends Block> B registerWithoutItem(String id, Function<BlockBehaviour.Properties, B> factory, BlockBehaviour.Properties properties) {
+    public static Block registerWithoutItem(String id, BlockPropertyBuilder properties) {
         ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, PhantasmalForests.id(id));
-        B block = factory.apply(properties.setId(key));
-        return Registry.register(BuiltInRegistries.BLOCK, key, block);
+        Block block = Registry.register(BuiltInRegistries.BLOCK, key, properties.getBlockType().apply(properties.getProperties().setId(key)));
+        if (properties.getBlockEntityType() != null) properties.getBlockEntityType().addValidBlock(block);
+        return block;
     }
 }

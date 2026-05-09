@@ -5,6 +5,7 @@ import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -71,23 +72,23 @@ public class WoodHelper {
     }
 
     public BlockPropertyBuilder sign() {
-        return make(settings -> new StandingSignBlock(woodType, settings), copy(Blocks.OAK_SIGN));
+        return make(settings -> new StandingSignBlock(woodType, settings), copy(Blocks.OAK_SIGN)).blockEntity(BlockEntityType.SIGN);
     }
 
     public BlockPropertyBuilder wallSign() {
-        return make(settings -> new WallSignBlock(woodType, settings), copy(Blocks.OAK_WALL_SIGN));
+        return make(settings -> new WallSignBlock(woodType, settings), copy(Blocks.OAK_WALL_SIGN)).blockEntity(BlockEntityType.SIGN);
     }
 
     public BlockPropertyBuilder hangingSign() {
-        return make(settings -> new CeilingHangingSignBlock(woodType, settings), copy(Blocks.OAK_HANGING_SIGN));
+        return make(settings -> new CeilingHangingSignBlock(woodType, settings), copy(Blocks.OAK_HANGING_SIGN)).blockEntity(BlockEntityType.HANGING_SIGN);
     }
 
     public BlockPropertyBuilder wallHangingSign() {
-        return make(settings -> new WallHangingSignBlock(woodType, settings), copy(Blocks.OAK_WALL_HANGING_SIGN));
+        return make(settings -> new WallHangingSignBlock(woodType, settings), copy(Blocks.OAK_WALL_HANGING_SIGN)).blockEntity(BlockEntityType.HANGING_SIGN);
     }
 
     public BlockPropertyBuilder shelf() {
-        return make(ShelfBlock::new, copy(Blocks.OAK_SHELF));
+        return make(ShelfBlock::new, copy(Blocks.OAK_SHELF)).blockEntity(BlockEntityType.SHELF);
     }
 
     public BlockPropertyBuilder log() {
