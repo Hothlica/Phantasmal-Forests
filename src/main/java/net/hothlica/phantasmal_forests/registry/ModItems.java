@@ -30,7 +30,7 @@ public class ModItems {
     public static final Item MUDWOOD_SIGN = registerBlockItem(ModBlocks.MUDWOOD_SIGN, settings -> new SignItem(ModBlocks.MUDWOOD_SIGN, ModBlocks.MUDWOOD_WALL_SIGN, settings.stacksTo(16).useBlockDescriptionPrefix()));
     public static final Item MUDWOOD_HANGING_SIGN = registerBlockItem(ModBlocks.MUDWOOD_HANGING_SIGN, settings -> new HangingSignItem(ModBlocks.MUDWOOD_HANGING_SIGN, ModBlocks.MUDWOOD_WALL_HANGING_SIGN, settings.stacksTo(16).useBlockDescriptionPrefix()));
 
-    public static final Item STEPPING_STONE = register("stepping_stone", new Item.Properties());
+    public static final Item STEPPING_STONE = register("stepping_stone", Item::new, new Item.Properties());
 
     public static void init() {}
 
@@ -40,12 +40,12 @@ public class ModItems {
         return register(id, factory.apply(new Item.Properties().setId(key).useBlockDescriptionPrefix()));
     }
 
-    //General item registration method
-    public static Item register(String id, Item.Properties settings) {
-        return register(id, Item::new, settings);
+    public static Item registerBlockItem(Block block, BlockPropertyBuilder properties, Function<Item.Properties, Item> factory) {
+        Item item = registerBlockItem(block, factory);
+        properties.runPostRegisterItemMethods((BlockItem) item);
+        return item;
     }
 
-    //For weird items
     public static Item register(String id, Function<Item.Properties, Item> factory, Item.Properties settings) {
         Identifier identifier = PhantasmalForests.id(id);
         return register(identifier, factory.apply(settings.setId(ResourceKey.create(Registries.ITEM, identifier))));

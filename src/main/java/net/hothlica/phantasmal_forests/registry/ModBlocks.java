@@ -9,22 +9,17 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
-
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class ModBlocks {
 
     // === Mudwood ===
     private static final WoodHelper MudwoodHelper = new WoodHelper(MapColor.CLAY, MapColor.COLOR_GREEN, MapColor.COLOR_BROWN, ModWoodTypes.MUDWOOD);
 
-    public static final Block MUDWOOD_LOG = register("mudwood_log", MudwoodHelper.log());
-    public static final Block MUDWOOD_WOOD = register("mudwood_wood", MudwoodHelper.wood());
     public static final Block STRIPPED_MUDWOOD_LOG = register("stripped_mudwood_log", MudwoodHelper.stripped());
     public static final Block STRIPPED_MUDWOOD_WOOD = register("stripped_mudwood_wood", MudwoodHelper.stripped());
+    public static final Block MUDWOOD_LOG = register("mudwood_log", MudwoodHelper.log(STRIPPED_MUDWOOD_LOG));
+    public static final Block MUDWOOD_WOOD = register("mudwood_wood", MudwoodHelper.wood(STRIPPED_MUDWOOD_WOOD));
     public static final Block MUDWOOD_PLANKS = register("mudwood_planks", MudwoodHelper.planks());
     public static final Block MUDWOOD_SLAB = register("mudwood_slab", MudwoodHelper.slab());
     public static final Block MUDWOOD_STAIRS = register("mudwood_stairs", MudwoodHelper.stairs());
@@ -45,20 +40,18 @@ public class ModBlocks {
     //public static final SaplingBlock MUDWOOD_SAPLING = register("mudwood_sapling",);
     //public static FlowerPotBlock POTTED_MUDWOOD_SAPLING;
 
-
-
     public static void init() {}
 
     public static Block register(String id, BlockPropertyBuilder properties) {
         Block block = registerWithoutItem(id, properties);
-        ModItems.registerBlockItem(block, p -> new BlockItem(block, p));
+        ModItems.registerBlockItem(block, properties, p -> new BlockItem(block, p));
         return block;
     }
 
     public static Block registerWithoutItem(String id, BlockPropertyBuilder properties) {
         ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, PhantasmalForests.id(id));
         Block block = Registry.register(BuiltInRegistries.BLOCK, key, properties.getBlockType().apply(properties.getProperties().setId(key)));
-        if (properties.getBlockEntityType() != null) properties.getBlockEntityType().addValidBlock(block);
+        properties.runPostRegisterMethods(block);
         return block;
     }
 }

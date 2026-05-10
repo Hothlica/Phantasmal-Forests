@@ -44,6 +44,8 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(MUDWOOD_PRESSURE_PLATE);
         dropSelf(MUDWOOD_SIGN);
         dropSelf(MUDWOOD_HANGING_SIGN);
+        dropSelf(MUDWOOD_WALL_SIGN);
+        dropSelf(MUDWOOD_WALL_HANGING_SIGN);
         dropSelf(MUDWOOD_SHELF);
     }
 }

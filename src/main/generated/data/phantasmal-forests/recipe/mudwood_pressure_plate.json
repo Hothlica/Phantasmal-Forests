@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_pressure_plate",
+  "key": {
+    "#": "phantasmal-forests:mudwood_planks"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "phantasmal-forests:mudwood_pressure_plate"
+  }
+}

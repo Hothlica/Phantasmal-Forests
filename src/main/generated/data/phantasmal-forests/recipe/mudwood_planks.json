@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    "#phantasmal-forests:mudwood_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "phantasmal-forests:mudwood_planks"
+  }
+}
