@@ -3,6 +3,7 @@ package net.hothlica.phantasmal_forests.registry;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.hothlica.phantasmal_forests.PhantasmalForests;
+import net.hothlica.phantasmal_forests.registry.helpers.BlockPropertyBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -26,16 +27,13 @@ public class ModItems {
         );
 
     //INITIALIZE ITEMS HERE
+    public static final Item MUDWOOD_SIGN = registerBlockItem(ModBlocks.MUDWOOD_SIGN, settings -> new SignItem(ModBlocks.MUDWOOD_SIGN, ModBlocks.MUDWOOD_WALL_SIGN, settings.stacksTo(16).useBlockDescriptionPrefix()));
+    public static final Item MUDWOOD_HANGING_SIGN = registerBlockItem(ModBlocks.MUDWOOD_HANGING_SIGN, settings -> new HangingSignItem(ModBlocks.MUDWOOD_HANGING_SIGN, ModBlocks.MUDWOOD_WALL_HANGING_SIGN, settings.stacksTo(16).useBlockDescriptionPrefix()));
+
     public static final Item STEPPING_STONE = register("stepping_stone", new Item.Properties());
 
     public static void init() {}
 
-    //General block item registration method
-    public static Item registerBlockItem(Block block) {
-        return registerBlockItem(block, p -> new BlockItem(block, p));
-    }
-
-    //For weird blocks
     public static Item registerBlockItem(Block block, Function<Item.Properties, Item> factory) {
         Identifier id = BuiltInRegistries.BLOCK.getKey(block);
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, id);

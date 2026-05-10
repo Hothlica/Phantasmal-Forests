@@ -7,6 +7,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -33,9 +34,9 @@ public class ModBlocks {
     public static final Block MUDWOOD_DOOR = register("mudwood_door", MudwoodHelper.door());
     public static final Block MUDWOOD_BUTTON = register("mudwood_button", MudwoodHelper.button());
     public static final Block MUDWOOD_PRESSURE_PLATE = register("mudwood_pressure_plate", MudwoodHelper.pressurePlate());
-    public static final Block MUDWOOD_SIGN = register("mudwood_sign", MudwoodHelper.sign());
+    public static final Block MUDWOOD_SIGN = registerWithoutItem("mudwood_sign", MudwoodHelper.sign());
     public static final Block MUDWOOD_WALL_SIGN = registerWithoutItem("mudwood_wall_sign", MudwoodHelper.wallSign());
-    public static final Block MUDWOOD_HANGING_SIGN = register("mudwood_hanging_sign", MudwoodHelper.hangingSign());
+    public static final Block MUDWOOD_HANGING_SIGN = registerWithoutItem("mudwood_hanging_sign", MudwoodHelper.hangingSign());
     public static final Block MUDWOOD_WALL_HANGING_SIGN = registerWithoutItem("mudwood_wall_hanging_sign", MudwoodHelper.wallHangingSign());
     public static final Block MUDWOOD_SHELF = register("mudwood_shelf", MudwoodHelper.shelf());
 
@@ -50,7 +51,7 @@ public class ModBlocks {
 
     public static Block register(String id, BlockPropertyBuilder properties) {
         Block block = registerWithoutItem(id, properties);
-        ModItems.registerBlockItem(block);
+        ModItems.registerBlockItem(block, p -> new BlockItem(block, p));
         return block;
     }
 
