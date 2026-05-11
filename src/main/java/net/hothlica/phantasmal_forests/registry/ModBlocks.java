@@ -34,11 +34,9 @@ public class ModBlocks {
     public static final Block MUDWOOD_HANGING_SIGN = registerWithoutItem("mudwood_hanging_sign", MudwoodHelper.hangingSign());
     public static final Block MUDWOOD_WALL_HANGING_SIGN = registerWithoutItem("mudwood_wall_hanging_sign", MudwoodHelper.wallHangingSign());
     public static final Block MUDWOOD_SHELF = register("mudwood_shelf", MudwoodHelper.shelf());
-
     public static final Block MUDWOOD_LEAVES = register("mudwood_leaves", MudwoodHelper.leaves(0x4A461E));
-
-    //public static final SaplingBlock MUDWOOD_SAPLING = register("mudwood_sapling",);
-    //public static FlowerPotBlock POTTED_MUDWOOD_SAPLING;
+    public static final Block MUDWOOD_SAPLING = register("mudwood_sapling", MudwoodHelper.sapling(ModConfiguredFeatures.MUDWOOD_TREE));
+    //public static final FlowerPotBlock POTTED_MUDWOOD_SAPLING;
 
     public static void init() {}
 

@@ -49,7 +49,7 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider{
         valueLookupBuilder(BlockTags.WOODEN_SHELVES).add(MUDWOOD_SHELF);
 
         valueLookupBuilder(BlockTags.LEAVES).add(MUDWOOD_LEAVES);
-        //valueLookupBuilder(BlockTags.SAPLINGS).add(MUDWOOD_SAPLING);
+        valueLookupBuilder(BlockTags.SAPLINGS).add(MUDWOOD_SAPLING);
         //valueLookupBuilder(BlockTags.FLOWER_POTS).add(POTTED_MUDWOOD_SAPLING);
         valueLookupBuilder(BlockTags.MINEABLE_WITH_HOE).add(MUDWOOD_LEAVES);
 

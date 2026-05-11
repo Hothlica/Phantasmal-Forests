@@ -1,8 +1,10 @@
 package net.hothlica.phantasmal_forests.registry.helpers;
 
+import net.hothlica.phantasmal_forests.registry.ModConfiguredFeatures;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
@@ -11,6 +13,7 @@ import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
@@ -124,8 +127,8 @@ public class WoodHelper {
     }
 
     //TODO: make configured features later as well as potted sapling
-//    public BlockPropertyBuilder sapling(MapColor leafMapColor) {
-//        return make(settings -> new SaplingBlock(new TreeGrower("mudwood_tree", Optional.empty(), Optional.of(ModConfiguredFeatures.MUDWOOD_TREE), copy(Blocks.OAK_PLANKS)))
-//                , BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY).mapColor(leafMapColor));
-//    }
+
+    public BlockPropertyBuilder sapling(ResourceKey<ConfiguredFeature<?,?>> feature) {
+        return make(settings -> new SaplingBlock(new TreeGrower("mudwood", Optional.empty(), Optional.of(feature), Optional.empty()), settings), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY).mapColor(leafMapColor));
+    }
 }
