@@ -27,8 +27,8 @@ public class MudwoodFoliagePlacer extends FoliagePlacer {
 
     @Override
     protected void createFoliage(WorldGenLevel level, FoliageSetter foliageSetter, RandomSource random, TreeConfiguration config, int trunkHeight, FoliageAttachment foliageAttachment, int foliageHeight, int leafRadius, int offset) {
-        double maxFoliageRadius = 1.5 + 1.5 * random.nextDouble();
-        int pinnacle = (int)((trunkHeight * 1.5) - trunkHeight);
+        double maxFoliageRadius = 2.5 + 0.5 * random.nextDouble();
+        int pinnacle = Math.min((int)((trunkHeight * 1.7) - trunkHeight), 6);
         BlockPos.MutableBlockPos pos = foliageAttachment.pos().mutable();
         int x = pos.getX();
         int y = pos.getY();
@@ -45,17 +45,15 @@ public class MudwoodFoliagePlacer extends FoliagePlacer {
             BlockPos.MutableBlockPos newPos = pos.mutable();
             int radiusCeiling = (int) Math.ceil(currTreeRadius);
             double currTreeRadiusSq = currTreeRadius * currTreeRadius;
-            int dxMax = radiusCeiling;
             for (int dz = -radiusCeiling; dz <= radiusCeiling; dz++) {
-                int dzSq = dz * dz;
-                while (dxMax > 0 && dzSq + dxMax * dxMax > currTreeRadiusSq) {
-                    dxMax--;
-                }
-                for (int dx = -dxMax; dx <= dxMax; dx++) {
-                    if ((dx == dxMax || dx == -dxMax || dz == radiusCeiling || dz == -radiusCeiling) && random.nextBoolean()) continue;
-                    newPos.set(x + dx, pos.getY(), z + dz);
-                    if (TreeFeature.isAirOrLeaves(level, newPos)) {
-                        foliageSetter.set(newPos.immutable(), config.foliageProvider.getState(level, random, newPos));
+                for (int dx = -radiusCeiling; dx <= radiusCeiling; dx++) {
+                    int xSqPluszSq = dx * dx + dz * dz;
+                    if (xSqPluszSq <= currTreeRadiusSq) {
+                        newPos.set(x + dx, pos.getY(), z + dz);
+                        if (random.nextBoolean() && dy < -1 && xSqPluszSq >= currTreeRadiusSq * 0.6) continue;
+                        if (TreeFeature.isAirOrLeaves(level, newPos)) {
+                            foliageSetter.set(newPos.immutable(), config.foliageProvider.getState(level, random, newPos));
+                        }
                     }
                 }
             }

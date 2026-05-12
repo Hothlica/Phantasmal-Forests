@@ -2,6 +2,7 @@ package net.hothlica.phantasmal_forests.data;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.core.RegistrySetBuilder;
 
 public class PhantasmalForestsDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -17,5 +18,10 @@ public class PhantasmalForestsDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider((output, lookup) -> new ModItemTagProvider(output, lookup, blockTagProvider));
 
 		pack.addProvider(ModDynamicRegistryProvider::new);
+	}
+
+	@Override
+	public void buildRegistry(RegistrySetBuilder registryBuilder) {
+		ModDynamicRegistryProvider.buildRegistry(registryBuilder);
 	}
 }

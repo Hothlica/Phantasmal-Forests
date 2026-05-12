@@ -15,6 +15,7 @@ public class PhantasmalForests implements ModInitializer {
 	public void onInitialize() {
 		ModItems.init();
 		ModBlocks.init();
+		ModFoliagePlacerTypes.init();
 	}
 
 	public static Identifier id(String path) {

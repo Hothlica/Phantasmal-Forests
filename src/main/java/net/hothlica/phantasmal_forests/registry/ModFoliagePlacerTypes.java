@@ -14,4 +14,6 @@ public class ModFoliagePlacerTypes {
     private static <P extends FoliagePlacer> FoliagePlacerType<P> register(String id, MapCodec<P> codec) {
         return Registry.register(BuiltInRegistries.FOLIAGE_PLACER_TYPE, PhantasmalForests.id(id), new FoliagePlacerType<>(codec));
     }
+
+    public static void init() {}
 }
