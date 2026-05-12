@@ -12,7 +12,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "MIT-License",
-	"icon": "assets/phantasmal-forests/icon.png",
+	"icon": "/assets/phantasmal_forests/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
