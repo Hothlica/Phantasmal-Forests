@@ -2,6 +2,8 @@
   "item_group.phantasmal_forests": "Phantasmal Forests",
 
   "item.phantasmal-forests.stepping_stone": "Stepping Stone",
+  "item.phantasmal-forests.mudwood_boat": "Mudwood Boat",
+  "item.phantasmal-forests.mudwood_chest_boat": "Mudwood Chest Boat",
 
   "block.phantasmal-forests.mudwood_log": "Mudwood Log",
   "block.phantasmal-forests.mudwood_wood": "Mudwood Wood",
@@ -19,5 +21,8 @@
   "block.phantasmal-forests.mudwood_sign":"Mudwood Sign",
   "block.phantasmal-forests.mudwood_hanging_sign":"Mudwood Hanging Sign",
   "block.phantasmal-forests.mudwood_shelf":"Mudwood Shelf",
-  "block.phantasmal-forests.mudwood_leaves":"Mudwood Leaves"
+  "block.phantasmal-forests.mudwood_leaves":"Mudwood Leaves",
+  "block.phantasmal-forests.mudwood_sapling":"Mudwood Sapling",
+
+  "entity.phantasmal-forests.mudwood_chest_boat": "Mudwood Chest Boat"
 }

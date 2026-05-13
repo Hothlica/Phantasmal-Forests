@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "phantasmal-forests:item/mudwood_chest_boat"
+  }
+}

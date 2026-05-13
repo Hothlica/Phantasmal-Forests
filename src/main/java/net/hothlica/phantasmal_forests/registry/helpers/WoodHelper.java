@@ -118,17 +118,18 @@ public class WoodHelper {
         return make(Block::new, copy(Blocks.OAK_PLANKS).ignitedByLava()).postRegister(craftedIgnite);
     }
 
-    // Non-woody blocks
-
+    // === Non-woody blocks ===
     public BlockPropertyBuilder leaves(int leafColor) {
         return make(settings -> new UntintedParticleLeavesBlock(0.01f, ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, leafColor), settings),
             BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES).mapColor(leafMapColor).isValidSpawn((state, world, pos, type) -> type == EntityType.OCELOT || type == EntityType.PARROT)
             .isSuffocating(NEVER).isViewBlocking(NEVER).ignitedByLava()).postRegister(ignite(30, 60)).postRegisterItem(compost);
     }
 
-    //TODO: make configured features later as well as potted sapling
-
     public BlockPropertyBuilder sapling(ResourceKey<ConfiguredFeature<?,?>> feature) {
-        return make(settings -> new SaplingBlock(new TreeGrower("mudwood", Optional.empty(), Optional.of(feature), Optional.empty()), settings), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY).mapColor(leafMapColor));
+        return make(settings -> new SaplingBlock(new TreeGrower("mudwood", Optional.empty(), Optional.of(feature), Optional.empty()), settings), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY).mapColor(leafMapColor)).postRegisterItem(compost);
+    }
+
+    public BlockPropertyBuilder pottedSapling(Block sapling) {
+        return make(settings -> new FlowerPotBlock(sapling, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_OAK_SAPLING));
     }
 }

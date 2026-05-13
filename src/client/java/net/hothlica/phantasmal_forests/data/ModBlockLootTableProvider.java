@@ -22,10 +22,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(MUDWOOD_SAPLING);
 
         // Potted plants
-        //dropPottedContents(ModBlocks.POTTED_MUDWOOD_SAPLING);
+        dropPottedContents(POTTED_MUDWOOD_SAPLING);
 
         // Leaves
-        //TODO: Change MUDWOOD_PLANKS to MUDWOOD_SAPLING
         add(MUDWOOD_LEAVES, createLeavesDrops(MUDWOOD_LEAVES, MUDWOOD_SAPLING, SAPLING_DROP_CHANCE));
 
         // === Mudwood ===

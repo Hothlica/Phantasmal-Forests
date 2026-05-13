@@ -27,13 +27,15 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerator.createHangingSign(ModBlocks.STRIPPED_MUDWOOD_LOG, ModBlocks.MUDWOOD_HANGING_SIGN, ModBlocks.MUDWOOD_WALL_HANGING_SIGN);
         blockModelGenerator.createShelf(ModBlocks.MUDWOOD_SHELF, ModBlocks.STRIPPED_MUDWOOD_LOG);
         blockModelGenerator.createTrivialBlock(ModBlocks.MUDWOOD_LEAVES, TexturedModel.LEAVES);
-        //TODO: Change potted plant model
-        blockModelGenerator.createPlantWithDefaultItem(ModBlocks.MUDWOOD_SAPLING, Blocks.POTTED_ACACIA_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
+        blockModelGenerator.createPlantWithDefaultItem(ModBlocks.MUDWOOD_SAPLING, ModBlocks.POTTED_MUDWOOD_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
         itemModelGenerator.generateFlatItem(ModItems.STEPPING_STONE, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerator.generateFlatItem(ModItems.MUDWOOD_BOAT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.MUDWOOD_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
     }
 
     private void registerBlockItemModel(BlockModelGenerators blockModelGenerators, Block block) {

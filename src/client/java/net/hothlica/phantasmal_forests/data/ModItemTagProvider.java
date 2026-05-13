@@ -12,6 +12,7 @@ import org.jspecify.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
+import static net.hothlica.phantasmal_forests.registry.ModItems.*;
 import static net.hothlica.phantasmal_forests.tag.ModItemTags.*;
 
 public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider{
@@ -45,6 +46,9 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider{
         copy(BlockTags.STANDING_SIGNS, ItemTags.SIGNS);
         copy(BlockTags.CEILING_HANGING_SIGNS, ItemTags.HANGING_SIGNS);
         copy(BlockTags.WOODEN_SHELVES, ItemTags.WOODEN_SHELVES);
+
+        valueLookupBuilder(ItemTags.BOATS).add(MUDWOOD_BOAT);
+        valueLookupBuilder(ItemTags.CHEST_BOATS).add(MUDWOOD_CHEST_BOAT);
 
         copy(ConventionalBlockTags.FENCES, ConventionalItemTags.FENCES);
         copy(ConventionalBlockTags.WOODEN_FENCES, ConventionalItemTags.WOODEN_FENCES);

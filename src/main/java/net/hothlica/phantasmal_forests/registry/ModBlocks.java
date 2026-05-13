@@ -36,7 +36,7 @@ public class ModBlocks {
     public static final Block MUDWOOD_SHELF = register("mudwood_shelf", MudwoodHelper.shelf());
     public static final Block MUDWOOD_LEAVES = register("mudwood_leaves", MudwoodHelper.leaves(0x4A461E));
     public static final Block MUDWOOD_SAPLING = register("mudwood_sapling", MudwoodHelper.sapling(ModConfiguredFeatures.MUDWOOD_TREE));
-    //public static final FlowerPotBlock POTTED_MUDWOOD_SAPLING;
+    public static final Block POTTED_MUDWOOD_SAPLING = registerWithoutItem("potted_mudwood_sapling", MudwoodHelper.pottedSapling(MUDWOOD_SAPLING));
 
     public static void init() {}
 

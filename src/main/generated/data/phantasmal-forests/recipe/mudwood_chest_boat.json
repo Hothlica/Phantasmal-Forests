@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "chest_boat",
+  "ingredients": [
+    "minecraft:chest",
+    "phantasmal-forests:mudwood_boat"
+  ],
+  "result": {
+    "id": "phantasmal-forests:mudwood_chest_boat"
+  }
+}

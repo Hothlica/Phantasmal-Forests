@@ -29,6 +29,8 @@ public class ModItems {
     //INITIALIZE ITEMS HERE
     public static final Item MUDWOOD_SIGN = registerBlockItem(ModBlocks.MUDWOOD_SIGN, settings -> new SignItem(ModBlocks.MUDWOOD_SIGN, ModBlocks.MUDWOOD_WALL_SIGN, settings.stacksTo(16).useBlockDescriptionPrefix()));
     public static final Item MUDWOOD_HANGING_SIGN = registerBlockItem(ModBlocks.MUDWOOD_HANGING_SIGN, settings -> new HangingSignItem(ModBlocks.MUDWOOD_HANGING_SIGN, ModBlocks.MUDWOOD_WALL_HANGING_SIGN, settings.stacksTo(16).useBlockDescriptionPrefix()));
+    public static final Item MUDWOOD_BOAT = register("mudwood_boat", settings -> new BoatItem(ModEntityTypes.MUDWOOD_BOAT, settings), new Item.Properties().stacksTo(1));
+    public static final Item MUDWOOD_CHEST_BOAT = register("mudwood_chest_boat", settings -> new BoatItem(ModEntityTypes.MUDWOOD_CHEST_BOAT, settings), new Item.Properties().stacksTo(1));
 
     public static final Item STEPPING_STONE = register("stepping_stone", Item::new, new Item.Properties());
 

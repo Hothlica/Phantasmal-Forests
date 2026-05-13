@@ -3,6 +3,7 @@ package net.hothlica.phantasmal_forests.data;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.hothlica.phantasmal_forests.registry.ModBlockFamilies;
+import net.hothlica.phantasmal_forests.registry.ModItems;
 import net.hothlica.phantasmal_forests.tag.ModItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -32,8 +33,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 this.hangingSign(MUDWOOD_HANGING_SIGN, STRIPPED_MUDWOOD_LOG);
                 this.shelf(MUDWOOD_SHELF, STRIPPED_MUDWOOD_LOG);
 
-                //this.woodenBoat(MUDWOOD_BOAT, MUDWOOD_PLANKS);
-                //this.chestBoat(MUDWOOD_CHEST_BOAT, MUDWOOD_BOAT);
+                this.woodenBoat(ModItems.MUDWOOD_BOAT, MUDWOOD_PLANKS);
+                this.chestBoat(ModItems.MUDWOOD_CHEST_BOAT, ModItems.MUDWOOD_BOAT);
 
             }
         };
