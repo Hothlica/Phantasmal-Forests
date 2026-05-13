@@ -28,7 +28,7 @@ public class ModConfiguredFeatures {
 
         register(context, MUDWOOD_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 SimpleStateProvider.simple(ModBlocks.MUDWOOD_LOG),
-                new StraightTrunkPlacer(12, 3, 0),
+                new StraightTrunkPlacer(7, 7, 0),
                 SimpleStateProvider.simple(ModBlocks.MUDWOOD_LEAVES),
                 new MudwoodFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
                 new TwoLayersFeatureSize(1, 0, 1))
