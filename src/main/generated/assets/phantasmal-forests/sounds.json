@@ -1,0 +1,11 @@
+{
+  "weeping_mudwood_log_changes": {
+    "sounds": [
+      {
+        "type": "event",
+        "name": "minecraft:entity.allay.ambient_without_item"
+      }
+    ],
+    "subtitle": "subtitles.phantasmal-forests.block.weeping_mudwood_log_change"
+  }
+}

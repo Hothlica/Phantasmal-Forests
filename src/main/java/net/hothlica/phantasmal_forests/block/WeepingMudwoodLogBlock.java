@@ -4,9 +4,11 @@ import com.mojang.serialization.MapCodec;
 import net.hothlica.phantasmal_forests.registry.ModBlockProperties;
 import net.hothlica.phantasmal_forests.registry.ModBlocks;
 import net.hothlica.phantasmal_forests.registry.ModItems;
+import net.hothlica.phantasmal_forests.registry.ModSounds;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -26,6 +28,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.phys.Vec3;
 
 public class WeepingMudwoodLogBlock extends HorizontalDirectionalBlock {
     public static final MapCodec<WeepingMudwoodLogBlock> CODEC = simpleCodec(WeepingMudwoodLogBlock::new);
@@ -81,6 +85,9 @@ public class WeepingMudwoodLogBlock extends HorizontalDirectionalBlock {
         boolean isNight = level.isDarkOutside();
         if (state.getValue(NIGHT) != isNight) {
             level.setBlock(pos, state.setValue(NIGHT, isNight), 3);
+            level.playSound(null, pos, ModSounds.WEEPING_MUDWOOD_LOG_CHANGE, SoundSource.BLOCKS, 1.0F, 1.0F);
+            Vec3 particleLoc = Vec3.atCenterOf(pos).relative(state.getValue(FACING), 0.5);
+            level.sendParticles(ParticleTypes.GLOW, particleLoc.x, particleLoc.y, particleLoc.z, 10, 0.3, 0.3, 0.3, 0.00001);
         }
     }
 }
