@@ -1,6 +1,7 @@
 package net.hothlica.phantasmal_forests.registry;
 
 import net.hothlica.phantasmal_forests.PhantasmalForests;
+import net.hothlica.phantasmal_forests.block.*;
 import net.hothlica.phantasmal_forests.registry.helpers.WoodHelper;
 import net.hothlica.phantasmal_forests.registry.helpers.BlockPropertyBuilder;
 import net.minecraft.core.Registry;
@@ -37,6 +38,7 @@ public class ModBlocks {
     public static final Block MUDWOOD_LEAVES = register("mudwood_leaves", MudwoodHelper.leaves(0x4A461E));
     public static final Block MUDWOOD_SAPLING = register("mudwood_sapling", MudwoodHelper.sapling(ModConfiguredFeatures.MUDWOOD_TREE));
     public static final Block POTTED_MUDWOOD_SAPLING = registerWithoutItem("potted_mudwood_sapling", MudwoodHelper.pottedSapling(MUDWOOD_SAPLING));
+    public static final Block WEEPING_MUDWOOD_LOG = register("weeping_mudwood_log", new BlockPropertyBuilder(WeepingMudwoodLogBlock::new, MudwoodHelper.copy(STRIPPED_MUDWOOD_LOG).randomTicks()));
 
     public static void init() {}
 

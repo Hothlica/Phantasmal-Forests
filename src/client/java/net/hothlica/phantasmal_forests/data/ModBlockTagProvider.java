@@ -19,7 +19,7 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider{
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        valueLookupBuilder(MUDWOOD_LOGS).add(MUDWOOD_LOG, STRIPPED_MUDWOOD_LOG, MUDWOOD_WOOD, STRIPPED_MUDWOOD_WOOD);
+        valueLookupBuilder(MUDWOOD_LOGS).add(MUDWOOD_LOG, STRIPPED_MUDWOOD_LOG, MUDWOOD_WOOD, STRIPPED_MUDWOOD_WOOD, WEEPING_MUDWOOD_LOG);
 
         // Vanilla
 
@@ -32,7 +32,7 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider{
         //valueLookupBuilder(BlockTags.WALLS).add();
 
         valueLookupBuilder(BlockTags.LOGS_THAT_BURN).addTag(MUDWOOD_LOGS);
-        valueLookupBuilder(BlockTags.OVERWORLD_NATURAL_LOGS).add(MUDWOOD_LOG);
+        valueLookupBuilder(BlockTags.OVERWORLD_NATURAL_LOGS).add(MUDWOOD_LOG, WEEPING_MUDWOOD_LOG);
         valueLookupBuilder(BlockTags.PLANKS).add(MUDWOOD_PLANKS);
         valueLookupBuilder(BlockTags.WOODEN_BUTTONS).add(MUDWOOD_BUTTON);
         valueLookupBuilder(BlockTags.WOODEN_DOORS).add(MUDWOOD_DOOR);

@@ -1,6 +1,5 @@
 package net.hothlica.phantasmal_forests.registry.helpers;
 
-import net.hothlica.phantasmal_forests.registry.ModConfiguredFeatures;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;

@@ -46,5 +46,6 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(MUDWOOD_WALL_SIGN);
         dropSelf(MUDWOOD_WALL_HANGING_SIGN);
         dropSelf(MUDWOOD_SHELF);
+        add(WEEPING_MUDWOOD_LOG, block -> this.createSingleItemTableWithSilkTouch(block, MUDWOOD_LOG));
     }
 }

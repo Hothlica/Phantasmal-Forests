@@ -1,0 +1,9 @@
+{
+  "parent": "phantasmal-forests:block/orientable_emissive",
+  "textures": {
+    "front": "phantasmal-forests:block/weeping_mudwood_log",
+    "front_emissive": "phantasmal-forests:block/weeping_mudwood_log_emissive",
+    "side": "phantasmal-forests:block/mudwood_log",
+    "top": "phantasmal-forests:block/mudwood_log_top"
+  }
+}

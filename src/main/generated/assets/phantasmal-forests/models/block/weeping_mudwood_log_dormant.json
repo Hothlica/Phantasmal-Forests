@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "phantasmal-forests:block/mudwood_log",
+    "side": "phantasmal-forests:block/mudwood_log",
+    "top": "phantasmal-forests:block/mudwood_log_top"
+  }
+}
