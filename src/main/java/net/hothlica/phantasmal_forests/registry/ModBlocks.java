@@ -12,6 +12,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
 
+import static net.hothlica.phantasmal_forests.registry.helpers.RegistryCallbacks.ignite;
+
 public class ModBlocks {
 
     // === Mudwood ===
@@ -35,10 +37,10 @@ public class ModBlocks {
     public static final Block MUDWOOD_HANGING_SIGN = registerWithoutItem("mudwood_hanging_sign", MudwoodHelper.hangingSign());
     public static final Block MUDWOOD_WALL_HANGING_SIGN = registerWithoutItem("mudwood_wall_hanging_sign", MudwoodHelper.wallHangingSign());
     public static final Block MUDWOOD_SHELF = register("mudwood_shelf", MudwoodHelper.shelf());
-    public static final Block MUDWOOD_LEAVES = register("mudwood_leaves", MudwoodHelper.leaves(0x4A461E));
+    public static final Block MUDWOOD_LEAVES = register("mudwood_leaves", MudwoodHelper.leaves(0x323B17));
     public static final Block MUDWOOD_SAPLING = register("mudwood_sapling", MudwoodHelper.sapling(ModConfiguredFeatures.MUDWOOD_TREE));
     public static final Block POTTED_MUDWOOD_SAPLING = registerWithoutItem("potted_mudwood_sapling", MudwoodHelper.pottedSapling(MUDWOOD_SAPLING));
-    public static final Block WEEPING_MUDWOOD_LOG = register("weeping_mudwood_log", new BlockPropertyBuilder(WeepingMudwoodLogBlock::new, MudwoodHelper.copy(STRIPPED_MUDWOOD_LOG).randomTicks()));
+    public static final Block WEEPING_MUDWOOD_LOG = register("weeping_mudwood_log", new BlockPropertyBuilder(WeepingMudwoodLogBlock::new, MudwoodHelper.copy(STRIPPED_MUDWOOD_LOG).randomTicks().ignitedByLava()).postRegister(ignite(5, 5)));
 
     public static void init() {}
 
