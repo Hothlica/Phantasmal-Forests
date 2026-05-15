@@ -2,6 +2,7 @@ package net.hothlica.phantasmal_forests.registry;
 
 import net.hothlica.phantasmal_forests.PhantasmalForests;
 import net.hothlica.phantasmal_forests.world.gen.feature.tree.foliage.MudwoodFoliagePlacer;
+import net.hothlica.phantasmal_forests.world.gen.feature.tree.trunk.MudwoodTrunkPlacer;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -28,7 +29,7 @@ public class ModConfiguredFeatures {
 
         register(context, MUDWOOD_TREE, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 SimpleStateProvider.simple(ModBlocks.MUDWOOD_LOG),
-                new StraightTrunkPlacer(7, 7, 0),
+                new MudwoodTrunkPlacer(7, 7, 0),
                 SimpleStateProvider.simple(ModBlocks.MUDWOOD_LEAVES),
                 new MudwoodFoliagePlacer(ConstantInt.of(0), ConstantInt.of(0)),
                 new TwoLayersFeatureSize(1, 0, 1))
