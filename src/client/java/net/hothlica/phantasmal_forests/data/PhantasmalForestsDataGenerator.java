@@ -14,6 +14,7 @@ public class PhantasmalForestsDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModEntityTypeTagProvider::new);
 		pack.addProvider(ModSoundsProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModBiomeTagProvider::new);
 
 		var blockTagProvider = pack.addProvider(ModBlockTagProvider::new);
 		pack.addProvider((output, lookup) -> new ModItemTagProvider(output, lookup, blockTagProvider));
