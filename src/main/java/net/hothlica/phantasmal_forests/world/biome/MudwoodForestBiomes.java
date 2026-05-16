@@ -27,7 +27,7 @@ public class MudwoodForestBiomes {
             .downfall(0.8F)
             .specialEffects(DefaultBiomeHelper.createDefaultBiomeEffects()
                 .waterColor(0x294E6A)
-                .grassColorOverride(0x687037)
+                .grassColorOverride(0x97A156)
                 .foliageColorOverride(0x454E22)
                 .build()
             )
