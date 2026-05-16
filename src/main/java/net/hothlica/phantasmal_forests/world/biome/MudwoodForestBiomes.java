@@ -10,7 +10,6 @@ import net.minecraft.world.attribute.BackgroundMusic;
 import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
-import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -18,17 +17,6 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import static net.hothlica.phantasmal_forests.registry.helpers.DefaultBiomeHelper.*;
 
 public class MudwoodForestBiomes {
-
-    public static final Climate.ParameterPoint DEFAULT_MUDWOOD_FOREST_HYPERCUBE =
-        new Climate.ParameterPoint(
-            Climate.Parameter.span(-1.0f, -0.15f),   // temperature
-            Climate.Parameter.span(-1.0f, -0.35f),   // humidity
-            Climate.Parameter.span(-0.11f, 0.3f),    // continentalness [Near inland, mid inland]
-            Climate.Parameter.span(-0.375f, 0.05f),  // erosion
-            Climate.Parameter.point(0.0f),      // depth (Surface biomes don't need it)
-            Climate.Parameter.span(-1.0f, 0.2f),     // weirdness [Valleys, mid]
-            0L                                       // offset
-        );
 
     public static Biome create(BootstrapContext<Biome> context) {
         return new Biome.BiomeBuilder()
@@ -38,14 +26,14 @@ public class MudwoodForestBiomes {
             .temperature(0.7F)
             .downfall(0.8F)
             .specialEffects(DefaultBiomeHelper.createDefaultBiomeEffects()
-                .waterColor(0x3f76e4)
-                .grassColorOverride(0x7ecc41)
-                .foliageColorOverride(10931465)
+                .waterColor(0x294E6A)
+                .grassColorOverride(0x687037)
+                .foliageColorOverride(0x454E22)
                 .build()
             )
             .putAttributes(DefaultBiomeHelper.createDefaultEnvironmentAttributes()
                 .set(EnvironmentAttributes.BACKGROUND_MUSIC, new BackgroundMusic(SoundEvents.MUSIC_BIOME_FOREST))
-                .set(EnvironmentAttributes.WATER_FOG_COLOR, 0x50533)
+                .set(EnvironmentAttributes.WATER_FOG_COLOR, 0x294E6A)
                 .build()
             )
             .build();

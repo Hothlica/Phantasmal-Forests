@@ -9,7 +9,7 @@
     },
     "minecraft:visual/fog_color": "#c0d8ff",
     "minecraft:visual/sky_color": "#7da2ff",
-    "minecraft:visual/water_fog_color": "#050533"
+    "minecraft:visual/water_fog_color": "#294e6a"
   },
   "carvers": [
     "minecraft:cave",
@@ -18,9 +18,9 @@
   ],
   "downfall": 0.8,
   "effects": {
-    "foliage_color": "#a6cd09",
-    "grass_color": "#7ecc41",
-    "water_color": "#3f76e4"
+    "foliage_color": "#454e22",
+    "grass_color": "#687037",
+    "water_color": "#294e6a"
   },
   "features": [
     [],
@@ -126,7 +126,56 @@
       }
     ],
     "misc": [],
-    "monster": [],
+    "monster": [
+      {
+        "type": "minecraft:spider",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 100
+      },
+      {
+        "type": "minecraft:zombie",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 95
+      },
+      {
+        "type": "minecraft:zombie_villager",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
+      },
+      {
+        "type": "minecraft:skeleton",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 100
+      },
+      {
+        "type": "minecraft:creeper",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 100
+      },
+      {
+        "type": "minecraft:slime",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 100
+      },
+      {
+        "type": "minecraft:enderman",
+        "maxCount": 4,
+        "minCount": 1,
+        "weight": 10
+      },
+      {
+        "type": "minecraft:witch",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
+      }
+    ],
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",

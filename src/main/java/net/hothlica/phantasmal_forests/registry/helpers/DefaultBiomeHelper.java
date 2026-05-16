@@ -28,7 +28,7 @@ public class DefaultBiomeHelper {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.farmAnimals(spawns);
         BiomeDefaultFeatures.caveSpawns(spawns);
-        //BiomeDefaultFeatures.monsters(spawns, 95, 5, 0, 100, false);
+        BiomeDefaultFeatures.monsters(spawns, 95, 5, 0, 100, false);
         return spawns;
     }
 
